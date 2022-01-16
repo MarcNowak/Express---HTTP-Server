@@ -20,7 +20,7 @@ app.post('/contact/send-message', (req, res) => {
 
   const { author, sender, title, message } = req.body;
 
-  if(author && sender && title && message) {
+  if (author && sender && title && message) {
     res.render('contact', { isSent: true });
   }
   else {
@@ -34,7 +34,7 @@ app.get('/hello/:name', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-  res.render('about.hbs', {layout: 'dark'});
+  res.render('about.hbs', { layout: 'dark' });
 });
 
 app.get('/contact', (req, res) => {
