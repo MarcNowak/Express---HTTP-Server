@@ -32,7 +32,7 @@ app.post('/contact/send-message', upload.single('uploadedFile'), (req, res) => {
   const uploadedFile = req.file;
 
   if (author && sender && title && message && uploadedFile) {
-    res.render('contact', { isSent: true, name: uploadedFile.originalName });
+    res.render('contact', { isSent: true, name: uploadedFile.originalname });
   }
   else {
     res.render('contact', { isError: true });
