@@ -1,8 +1,17 @@
 const express = require('express');
 const path = require('path');
 const hbs = require('express-handlebars');
-const multer  = require('multer');
-const upload = multer({dest: 'public/'});
+const multer = require('multer')
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+
+const upload = multer({storage: storage})
 
 const app = express();
 
